@@ -1,0 +1,26 @@
+/* assets/css/add-on.css */
+
+/* Cibler les tableaux à l'intérieur du contenu principal des articles/pages */
+/* Ananke utilise souvent la classe .post-content pour envelopper le contenu généré par Markdown */
+.post-content table {
+    width: 100%; /* Fait prendre au tableau toute la largeur de son conteneur */
+    max-width: 100%; /* S'assure qu'il ne déborde pas de manière étrange */
+    display: block; /* Peut aider si la largeur à 100% ne fonctionne pas directement, force un comportement de bloc */
+    overflow-x: auto; /* Ajoute une barre de défilement horizontale si le tableau est encore trop large pour l'écran */
+    margin-bottom: 1.5rem; /* Un peu d'espace en dessous du tableau */
+    border-collapse: collapse; /* Pour des bordures plus nettes si vous en ajoutez */
+}
+
+/* Optionnel : Style pour les cellules et en-têtes si vous voulez des bordures visibles */
+/*
+.post-content th,
+.post-content td {
+    border: 1px solid #ddd; 
+    padding: 8px;
+    text-align: left;
+}
+
+.post-content th {
+    background-color: #f2f2f2;
+}
+*/

@@ -1,0 +1,2 @@
+{{/* layouts/shortcodes/image_a4.html */}}
+<img src="{{ .Get "src" }}" alt="{{ .Get "alt" }}" style="width: {{ with .Get "width" }}{{ . }}{{ else }}29.7cm{{ end }}; height: {{ with .Get "height" }}{{ . }}{{ else }}21cm{{ end }}; max-width: 100%; height: auto;">
