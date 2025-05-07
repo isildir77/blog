@@ -1,17 +1,10 @@
 ---
-title: "Isildir Blog"
+title: "Home"
 ---
-
-Ceci est la page d'accueil de mon site vitrine. Je suis en train d'apprendre Hugo et GitHub Pages !
 
 ## Blog categories
 
-Cheatsheets | Infrastructure | Security | Job Experiences
-
-## Mes services (Exemple)
-
-* Création de sites web
-* Conseil en technologie
+Cheatsheets | KM | Azure Learning | Job Experiences
 
 ## Interesting organizations
 

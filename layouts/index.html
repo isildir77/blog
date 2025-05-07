@@ -1,0 +1,59 @@
+{{ define "main" }}
+  <div class="ph3 mw8-l center">
+    {{/* Optionnel: Si vous avez du contenu dans content/_index.md, il s'affichera ici */}}
+    {{ if .Content }}
+      <div class="measure-wide center lh-copy nested-copy-line-height nested-links nested-img mid-gray mb4">
+        {{ .Content }}
+      </div>
+    {{ end }}
+
+    <h1 class="f2 f1-ns b tc mv4 mv5-ns">
+      {{ if .Title }}
+        {{ .Title }} {{/* Titre de content/_index.md s'il existe */}}
+      {{ else }}
+        Derniers Articles {{/* Titre par défaut si pas de content/_index.md ou pas de titre dedans */}}
+      {{ end }}
+    </h1>
+
+    <div class="cf pa2">
+      {{/* Logique pour paginer les articles de vos "mainSections" */}}
+      {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+
+      {{/* Alternative si vous n'utilisez pas mainSections ou voulez tous les posts d'une section spécifique : */}}
+      {{/* {{ $paginator := .Paginate (where .Site.RegularPages.ByDate.Reverse "Section" "posts") }} */}}
+
+      {{/* Alternative pour tous les articles du site, triés par date décroissante : */}}
+      {{/* {{ $paginator := .Paginate .Site.RegularPages.ByDate.Reverse }} */}}
+
+      {{ range $paginator.Pages }}
+        <article class="fl w-100 w-50-ns pa2-ns">
+          <div class="ba b--black-10 br2 h-100">
+            {{ if .Params.featured_image }}
+              <a href="{{ .RelPermalink }}" class="db aspect-ratio aspect-ratio--16x9">
+                <img src="{{ .Params.featured_image | absURL }}" 
+                     alt="Image pour {{ .Title }}" 
+                     class="db aspect-ratio--object cover br2 br--top" />
+              </a>
+            {{ end }}
+            <div class="pa3">
+              <a href="{{ .RelPermalink }}" class="db dim">
+                <h2 class="f3 b lh-title mb2">{{ .Title }}</h2>
+              </a>
+              <p class="f6 lh-copy mid-gray mv0">
+                {{ .Date.Format "2 January 2006" }}
+              </p>
+              <div class="f5 lh-copy mid-gray nested-copy-line-height nested-links">
+                {{ .Summary }}
+              </div>
+              <a href="{{ .RelPermalink }}" class="link blue f6 db mt3">Lire la suite &rarr;</a>
+            </div>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+
+    {{/* Inclure la pagination d'Ananke */}}
+    {{ partial "pagination.html" . }}
+
+  </div>
+{{ end }}

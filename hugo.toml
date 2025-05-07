@@ -1,10 +1,14 @@
 # hugo.toml
 baseURL = "https://isildir77.github.io/blog/" # Important pour GitHub Pages !
 languageCode = "fr-fr"
-title = "Mon Site Vitrine Simple"
+title = "Isildir Blog"
 theme = "ananke"
 
 [params]
   description = "Un site vitrine simple créé avec Hugo et hébergé sur GitHub Pages."
   # Ajoutez d'autres paramètres spécifiques au thème Ananke si besoin (logo, etc.)
   # consultez la documentation du thème Ananke pour plus d'options.
+  mainSections = ["posts"]
+
+[taxonomies]
+  category = "categories" 

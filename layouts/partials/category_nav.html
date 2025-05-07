@@ -1,0 +1,12 @@
+{{/* layouts/partials/category_nav.html */}}
+{{ if .Site.Taxonomies.categories }}
+  <nav class="pv3 ph3 ph4-l tc {{ if .IsHome }} bt bb b--light-gray {{ else }} bb b--light-gray {{ end }}" role="navigation" aria-label="Catégories">
+    <span class="f6 b dib mr3 mb2">CATÉGORIES :</span>
+    {{ range $name, $taxonomy := .Site.Taxonomies.categories.ByCount.Reverse }}
+      {{/* .ByCount.Reverse pour les plus populaires en premier, .Alphabetical pour l'ordre alphabétique */}}
+      <a class="link f6 dib dim mr3 mb2 pv1 ph2 br2 {{ if (and (eq $.Type "categories") (eq $.Title $taxonomy.Page.Title)) }}bg-light-purple white{{ else }}bg-light-gray near-black hover-bg-light-purple hover-white{{ end }}" href="{{ $taxonomy.Page.Permalink }}">
+        {{ $taxonomy.Page.Title | upper }} ({{ $taxonomy.Count }})
+      </a>
+    {{ end }}
+  </nav>
+{{ end }}
