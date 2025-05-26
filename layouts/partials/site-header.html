@@ -25,7 +25,7 @@
 {{ else }}
 
   <header>
-    <div class="pb3-m pb6-l {{ .Site.Params.background_color_class | compare.Default "bg-black" }}">
+    <div class="pb3-m pb3-l {{ .Site.Params.background_color_class | compare.Default "bg-black" }}">
       {{ partials.Include "site-navigation.html" . }}
       {{ partial "category_nav.html" . }}
       <!--
