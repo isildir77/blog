@@ -7,14 +7,6 @@
       </div>
     {{ end }}
 
-    <h1 class="f2 f1-ns b tc mv4 mv5-ns">
-      {{ if .Title }}
-        {{ .Title }} {{/* Titre de content/_index.md s'il existe */}}
-      {{ else }}
-        Derniers Articles {{/* Titre par défaut si pas de content/_index.md ou pas de titre dedans */}}
-      {{ end }}
-    </h1>
-
     <div class="cf pa2">
       {{/* Logique pour paginer les articles de vos "mainSections" */}}
       {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
