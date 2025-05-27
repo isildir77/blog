@@ -6,5 +6,5 @@ date: 2025-05-07
 
 ## Skills at a glance
 
-{{< figure src="/image.jpg" title="test" >}}
+{{< figure src="/image2.jpg" title="test" >}}
 
