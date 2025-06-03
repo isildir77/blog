@@ -31,6 +31,48 @@ Storage creation tools :
 
 # Configure Azure Blob Storage
 
+BLOB stands for **B**inary **L**arge **OB**ject
+
+Sta-test-1:
+- Blob1
+  - test.txt
+- Blob2
+  - video.mov
+  - picture.png
+ 
+Data migration tools:
+- AzCopy, Azure Storage Explorer, Azure Powershell
+- No Cut/Paste option when using 
+ 
+## Containers (folders) access level
+
+Public access level:
+- Private = Prohibit anonymous access to containers and blob
+- Blob = Allow anonymous public read access for the blobs only
+- Container = Allow anonymous public read **AND LIST** access to the entire container, including blobs
+
+![test](https://learn.microsoft.com/en-us/training/wwl-azure/configure-blob-storage/media/blob-containers-a243a2b9.png)
+
+## Blob access tiers
+
+| Hot | Cool | Cold | Archive |
+|----| ----| ---- | ---- |
+| Immediate access | 30 days backup | 90 days backup | 180 days backup |
+| milliseconds | milliseconds | milliseconds | hours in latency |
+
+## Blob lifecycle management rules
+
+Used to transition data to the appropriate access tier or to delete the blob after a certain period of time.
+
+Ex: If blob created 6 months ago, then move blob to cold storage
+
+## Blob object replication
+
+Asynchronously replicate blobs in another STA. Target STA can be in another region. 
+- Object replication applies to all tier
+- Blob versioning must be enabled in both STA
+- Replication does not support snapshots
+
 # Configure Azure Files
 
 # Configure Azure Storage Security
