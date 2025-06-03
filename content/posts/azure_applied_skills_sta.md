@@ -51,8 +51,6 @@ Public access level:
 - Blob = Allow anonymous public read access for the blobs only
 - Container = Allow anonymous public read **AND LIST** access to the entire container, including blobs
 
-![test](https://learn.microsoft.com/en-us/training/wwl-azure/configure-blob-storage/media/blob-containers-a243a2b9.png)
-
 ## Blob access tiers
 
 | Hot | Cool | Cold | Archive |
@@ -72,6 +70,14 @@ Asynchronously replicate blobs in another STA. Target STA can be in another regi
 - Object replication applies to all tier
 - Blob versioning must be enabled in both STA
 - Replication does not support snapshots
+
+## Upload blobs
+
+- Block blobs (classic)
+- Append blobs (append operations like logging)
+- Page blobs  (max 8TB in size, used for VM disks read/write operations)
+
+## Blob storage pricing
 
 # Configure Azure Files
 
