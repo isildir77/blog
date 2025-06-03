@@ -71,13 +71,24 @@ Asynchronously replicate blobs in another STA. Target STA can be in another regi
 - Blob versioning must be enabled in both STA
 - Replication does not support snapshots
 
-## Upload blobs
+## Manage blobs
 
 - Block blobs (classic)
 - Append blobs (append operations like logging)
 - Page blobs  (max 8TB in size, used for VM disks read/write operations)
 
+Blob upload tools:
+- | Azure Portal | Azure Storage Explorer | AzCopy | Azure Data Box Disk (transfer data from on-premise to Blob storage)
+
 ## Blob storage pricing
+
+Following parameters impact STA pricing:
+- Performance (Standard / Premium)
+- Data access (Hot / Cool tier)
+- Transaction costs
+- Geo-replication
+- Outbound data transfer
+- Access tier modification (Cool to Hot tier)
 
 # Configure Azure Files
 
