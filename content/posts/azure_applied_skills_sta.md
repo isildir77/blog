@@ -6,12 +6,12 @@ date: 2025-05-07
 
 This article resume the content of [Microsoft Applied Skills : Secure storage for Azure Files and Azure Blob Storage](https://learn.microsoft.com/en-us/training/paths/implement-storage-azure-files-azure-blob-storage/)
 
-# Configure Azure Storage Account
+# I. Configure Azure Storage Account
 
 Azure Storage groups one ore more of the following services:
-- | Blob | Files | Queues | Tables |
+- Blob | Files | Queues | Tables
 
-ex: sta-test-1 can have 2 blob, 1 files and 1 table
+ex: sta-test-1 can have 2 blob, 1 file and 1 table
 
 ## Storage account settings
 
@@ -27,9 +27,9 @@ ex: sta-test-1 can have 2 blob, 1 files and 1 table
 Data diversity, cost sensitivity and fault tolerance determines the number of storage accounts.
 
 Storage creation tools :
-- | Azure CLI | Azure Portal | Azure Powershell | SDK |
+- Azure CLI | Azure Portal | Azure Powershell | SDK
 
-# Configure Azure Blob Storage
+# II. Configure Azure Blob Storage
 
 BLOB stands for **B**inary **L**arge **OB**ject
 
@@ -90,11 +90,11 @@ Following parameters impact STA pricing:
 - Outbound data transfer
 - Access tier modification (Cool to Hot tier)
 
-# Configure Azure Files
+# III. Configure Azure Files
 
-# Configure Azure Storage Security
+# IV. Configure Azure Storage Security
 
-# NSG and service endpoints applied to Storage Accounts (*TO BE COMPLETED*)
+# V. NSG and service endpoints applied to Storage Accounts (*TO BE COMPLETED*)
 
 Network Security Group
 : network ip firewall rules
