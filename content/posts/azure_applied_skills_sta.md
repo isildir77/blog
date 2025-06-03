@@ -94,4 +94,18 @@ Following parameters impact STA pricing:
 
 # Configure Azure Storage Security
 
-# NSG and service endpoints applied to Storage Accounts
+# NSG and service endpoints applied to Storage Accounts (*TO BE COMPLETED*)
+
+Network Security Group
+: network ip firewall rules
+
+Service tags
+: Alias to identify Azure services in NSG (ex: Virtual network or Storage account). Service tag represents Azure Storage services IP range
+
+App Security Group
+: Resources rejoining in a virtual network no matter the IP addresses used in NSG
+
+Exercise:
+- PaaS service endpoints
+- Create NSG & ASG using Azure CLI
+
