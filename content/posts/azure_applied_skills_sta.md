@@ -94,16 +94,52 @@ Following parameters impact STA pricing:
 
 # IV. Configure Azure Storage Security
 
+## Storage account security settings
+
+- Encryption
+- Authentication
+- Security in transit
+- Disk encryption (VM OS disk)
+- SAS token
+- Authorization
+
+## Shared access signature (SAS token)
+
+- Account-level SAS
+  - One or more Azure storage services are allowed (Blob, Files, Queue, Table)
+- Service-level SAS
+  - Only one Azure storage services is allowed
+
+Shared access policies can't be used for account-level SAS
+
+URI & parameters:
+- SAS token are generated using URI and query strings parameters
+
+ex: https://statest.blob.core.windows.net **..&sp=rw..&ss=bfqt..&st=0000...**
+(permissions, service allowed and start date
+
+For account-level SAS, there is as much UI as authorized storage service:
+- https://statest.files.core.windows.net
+- https://statest.queue.core.windows.net
+
+> Service, resource and permissions must be checked at least once
+
+## STA Encryption
+
+- All data is automatically encrypted using AES-256 keys before persistance
+- Possible to use customer-managed keys (CMK). CMK and encrypted STA must be in the same region.
+
+## STA Security best practices
+
+cf. ![Microsoft Learn Documentation](https://learn.microsoft.com/en-us/azure/storage/blobs/security-recommendations)
+
 # V. NSG and service endpoints applied to Storage Accounts (*TO BE COMPLETED*)
 
-Network Security Group
-: network ip firewall rules
+Network Security Group = network ip firewall rules
 
-Service tags
-: Alias to identify Azure services in NSG (ex: Virtual network or Storage account). Service tag represents Azure Storage services IP range
+Service tags = Alias to identify Azure services in NSG (ex: Virtual network or Storage account). Service tag represents Azure Storage services IP range
 
-App Security Group
-: Resources rejoining in a virtual network no matter the IP addresses used in NSG
+App Security Group = Resources rejoining in a virtual network no matter the IP addresses used in NSG
 
 Exercise:
 - PaaS service endpoints
