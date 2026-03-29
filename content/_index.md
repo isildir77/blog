@@ -4,7 +4,7 @@ title: "Home"
 
 ## Blog categories
 
-| Cheatsheets | KM | Azure Learning | Job Experiences |
+| Cheatsheets | KM | Azure Learning | Job Experiences | TEST
 
 ## Interesting organizations
 
