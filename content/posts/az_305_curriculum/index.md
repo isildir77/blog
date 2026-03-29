@@ -6,5 +6,5 @@ date: 2025-05-07
 
 ## Skills at a glance
 
-{{< figure src="/az305_curriculum.png" title="test" >}}
+{{< figure src="/az305_curriculum.png" title="" >}}
 
